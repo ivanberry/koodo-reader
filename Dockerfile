@@ -9,7 +9,7 @@ RUN tarball_url=$(curl -s https://api.github.com/repos/troyeguo/koodo-reader/rel
 
 ### --network-timeout 1000000 as a workaround for slow devices
 ### when the package being installed is too large, Yarn assumes it's a network problem and throws an error
-RUN yarn --network-timeout 1000000
+# RUN yarn --network-timeout 1000000
 
 ### Separate `yarn build` layer as a workaround for devices with low RAM.
 ### If build fails due to OOM, `yarn install` layer will be already cached.
