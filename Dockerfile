@@ -2,9 +2,9 @@ FROM node:18-alpine AS base
 
 FROM base AS deps
 
-RUN apk add --no-cache libc6-compat python
+RUN apk add --no-cache libc6-compat && \
+    apk add --no-cache python
 
-# RUN apt-get update && apt-get install -y jq curl wget python
 WORKDIR /app
 
 COPY package.json yarn.lock ./
